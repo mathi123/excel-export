@@ -33,6 +33,8 @@ namespace ExcelExport
             var sheets = spreadSheet.WorkbookPart.Workbook.
                 AppendChild(new Sheets());
 
+            uint sheetIdCounter = 1;
+
             foreach (var sheetConfiguration in configurations)
             {
                 // Add a WorksheetPart to the WorkbookPart.
@@ -72,7 +74,7 @@ namespace ExcelExport
                 var sheet = new Sheet()
                 {
                     Id = spreadSheet.WorkbookPart.GetIdOfPart(worksheetPart),
-                    SheetId = 1,
+                    SheetId = sheetIdCounter++,
                     Name = sheetConfiguration.Name
                 };
                 sheets.Append(sheet);
