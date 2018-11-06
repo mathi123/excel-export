@@ -1,2 +1,2 @@
-# excel-export
-simple excel export based on OpenXML
+# Excel Export
+simple C# excel export based on OpenXML
